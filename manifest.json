@@ -9,15 +9,7 @@
     "https://translate.google.en/*"
   ],
   "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "js": ["darkMode.js"],
-      "matches": [
-        "https://translate.google.pl/*",
-        "https://translate.google.en/*"
-      ]
-    }
-  ]
+    "service_worker": "background.js",
+    "run_at": "document_end"
+  }
 }
