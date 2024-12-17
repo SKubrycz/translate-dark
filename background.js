@@ -75,6 +75,36 @@ function setDarkMode() {
       color: rgb(190, 190, 190);
     }
 
+    .jCAhz:hover {
+      background-color: #777;
+    }
+    .jCAhz.C1N51c {
+      background-color: #777;
+    }
+    .Xcmxjb.FwR7Pc {
+      background-color:#777;
+    }
+
+    /* synonyms popover */
+    .NWlwsb {
+      background-color: #555;
+    }
+    .WtlSJf.KKjvXb {
+      background-color: #666;
+    }
+    .WtlSJf {
+      border-bottom: 1px solid rgb(170, 170, 170);
+    }
+    .WtlSJf:hover {
+      background-color: #666;
+    }
+    .lrSgmd {
+      color: rgb(190, 190, 190);
+    }
+    .W5CUef {
+      color: rgb(170, 170, 170);
+    }
+
     .hX7wnb {
       border-top: 2px solid rgb(170, 170, 170);
       background-color: #444;
