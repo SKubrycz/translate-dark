@@ -66,6 +66,32 @@ function setDarkMode() {
     .ita-kd-img {
       filter: invert(100%);
     }
+    .vk-box {
+      background-color: #444 !important;
+    }
+    .vk-btn {
+      color: rgb(190, 190, 190) !important;
+      background-image: linear-gradient(to bottom, #333, #444) !important;
+    }
+    /*.vk-sf-h {
+      color: rgb(190, 190, 190);
+      background-image: linear-gradient(to bottom, #555, #666);
+    }*/
+    .ita-kd-dropdown-menu {
+      background: #444 !important;
+      border: 1px solid rgb(170, 170, 170) !important;
+    }
+    .ita-kd-menuitem {
+      color: rgb(190, 190, 190) !important;
+    }
+    .ita-kd-menuitem:hover {
+      background: #777 !important;
+    }
+    .ita-kd-menuitem-hover {
+      /* does not work */
+      background: #777 !important;
+      background-color: #777 !important;
+    }
 
     /* translation output section */
     .QcsUad {
@@ -82,7 +108,7 @@ function setDarkMode() {
       background-color: #777;
     }
     .Xcmxjb.FwR7Pc {
-      background-color:#777;
+      background-color: #777;
     }
 
     /* synonyms popover */
