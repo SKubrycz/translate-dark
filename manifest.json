@@ -6,7 +6,7 @@
   "permissions": ["scripting", "activeTab", "storage", "tabs"],
   "host_permissions": [
     "https://translate.google.pl/*",
-    "https://translate.google.en/*"
+    "https://translate.google.com/*"
   ],
   "background": {
     "service_worker": "background.js",

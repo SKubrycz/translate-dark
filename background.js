@@ -24,6 +24,11 @@ function setDarkMode() {
       background: ${mainBg};
     }
 
+    /* upper buttons */
+    .Rj2Mlf:not(:disabled) {
+      border-color: var(--gm-hairlinebutton-outline-color,#444);
+    }
+
     /* gradient colors */
     .U0xwnf::after {
       background: linear-gradient(to right, rgba(255, 255, 255, 0), ${mainBg});
@@ -57,6 +62,9 @@ function setDarkMode() {
     }
     .xUPQqb {
       color: rgb(150, 150, 150);
+    }
+    .ita-kd-img {
+      filter: invert(100%);
     }
 
     /* translation output section */
@@ -100,6 +108,51 @@ function setDarkMode() {
     .TcXXXb {
       color: rgb(190, 190, 190);
     }
+
+    /* background color after dictionary load */
+    .T4LgNb {
+      background-color: ${mainBg};
+    }
+
+    /* dictionary - no word written */
+    .kmXzdf, .eSogib {
+      background-color: ${mainBg};
+    }
+    .bJ6JAe {
+      filter: invert(90%) hue-rotate(190deg);
+    }
+    .pwKYW {
+      color: rgb(190, 190, 190);
+    }
+
+    /* dictionary */
+    .jTj8gd {
+      background-color: ${mainBg};
+    }
+    .SMqeCb {
+      background-color: ${mainBg};
+    }
+    .kmXzdf, .eSogib {
+      box-shadow: -1px 0 rgb(170, 170, 170);
+    }
+    .a2Icud {
+      1px solid rgb(170, 170, 170);
+    }
+    .aia4Ud {
+      color: rgb(190, 190, 190);
+    }
+    .S6GkK {
+      color: rgb(190, 190, 190);
+    }
+    .JAk00 {
+      color: rgb(190, 190, 190);
+    }
+    .AZPoqf {
+      color: rgb(190, 190, 190);
+    }
+    .kgnlhe {
+      color: rgb(190, 190, 190);
+    }
   `;
   document.head.appendChild(additionalStyles);
 
@@ -107,10 +160,20 @@ function setDarkMode() {
 }
 
 chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
-  if (
-    changeInfo.status === "complete" &&
-    tab.url.includes("translate.google")
-  ) {
+  const manifestData = chrome.runtime.getManifest();
+
+  let isAllowed = false;
+  const allowedHosts = manifestData.host_permissions;
+  allowedHosts.forEach((el, i) => {
+    let stripped = el.replace("*", "");
+    stripped = stripped.replace("https://", "");
+
+    if (tab.url.includes(stripped) && !isAllowed) {
+      isAllowed = true;
+    }
+  });
+
+  if (changeInfo.status === "loading" && isAllowed) {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: setDarkMode,
