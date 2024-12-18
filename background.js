@@ -130,6 +130,9 @@ function setDarkMode() {
     .W5CUef {
       color: rgb(170, 170, 170);
     }
+    .qt6jm {
+      border-top: 2px solid rgb(170, 170, 170);
+    }
 
     .hX7wnb {
       border-top: 2px solid rgb(170, 170, 170);
@@ -208,6 +211,63 @@ function setDarkMode() {
     }
     .kgnlhe {
       color: rgb(190, 190, 190);
+    }
+
+    /* history */
+    .AzKM4 {
+      background: ${mainBg} !important;
+    }
+    .XMNbjd {
+      color: rgb(190, 190, 190) !important;
+    }
+    .v2OCrb {
+      color: rgb(190, 190, 190) !important;
+    }
+    .EYBmYc {
+      color: rgb(190, 190, 190) !important;
+    }
+    .uqiNJb {
+      color: rgb(170, 170, 170);
+    }
+    .DLAnyc {
+      background: ${mainBg} !important;
+    }
+    .vvNkBd {
+      color: rgb(190, 190, 190);
+    }
+    .NBY4Kb {
+      background: ${mainBg} !important;
+    }
+
+    /* saved translations */
+    .j27i7 {
+      background: ${mainBg} !important;
+    }
+    .AP34ab {
+      color: rgb(190, 190, 190) !important;
+    }
+    .kgJkHd {
+      color: rgb(190, 190, 190) !important;
+    }
+    .VfPpkd-xl07Ob-XxIAqe {
+      background-color: ${mainBg} !important;
+    }
+    .VfPpkd-StrnGf-rymPhb-b9t22c {
+      color: rgb(190, 190, 190) !important;
+    }
+
+    /* while no saved translations */
+    .KpIhE {
+      filter: invert(90%);
+    }
+    .HswdMd {
+      color: rgb(190, 190, 190) !important;
+    }
+
+    /* history & saved buttons */
+    .myVd4c .ySES5 {
+      background: #444;
+      border: 1px solid #444;
     }
   `;
   document.head.appendChild(additionalStyles);
