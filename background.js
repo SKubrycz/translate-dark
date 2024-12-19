@@ -36,7 +36,24 @@ function setDarkMode() {
     .X4DQ0::after {
       background: linear-gradient(to right, rgba(255, 255, 255, 0), ${mainBg});
     }
-    
+
+    /* language choice popover */
+    .fMHXgc {
+      background: ${mainBg};
+    }
+    .yFQBKb {
+      background: ${mainBg};
+    }
+    .dykxn {
+      background: ${mainBg};
+    }
+    .qSb8Pe {
+      color: rgb(190, 190, 190);
+    }
+    .qSb8Pe:hover {
+      background: #444;
+    }
+
     /* color for translating section */
     .ccvoYb {
       background-color: ${mainBg};
