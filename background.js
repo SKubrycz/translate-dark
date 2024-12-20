@@ -18,6 +18,11 @@ function setDarkMode() {
       background: ${mainBg};
     }
 
+    /* settings */
+    .pWIpbc, .Jp7KKb, .XOPM0 {
+      color: rgb(190, 190, 190);
+    }
+
     /* drawer */
     div[role=navigation] {
       color: rgb(190, 190, 190);
