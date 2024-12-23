@@ -2,14 +2,17 @@ function setDarkMode() {
   const mainBg = "#222";
 
   document.body.style.backgroundColor = mainBg;
+  document.body.style.color = `rgb(190, 190, 190)`;
   const allButtons = document.getElementsByTagName("button");
   // const gradients = document.getElementsByClassName("U0xwnf");
   // const translatingWindows = document.getElementsByClassName("ccvoYb");
   const translatingWindowsRenderer = document.getElementsByClassName("QsA0jb");
   const languageTabs = document.getElementsByClassName("VfPpkd-YVzG2b");
 
-  const headerBanner = document.getElementById("gb");
-  headerBanner.style.background = mainBg;
+  if (!document.URL.includes("/about")) {
+    const headerBanner = document.getElementById("gb");
+    headerBanner.style.background = mainBg;
+  }
 
   const additionalStyles = document.createElement("style");
   additionalStyles.innerHTML = `
@@ -290,6 +293,41 @@ function setDarkMode() {
     .myVd4c .ySES5 {
       background: #444;
       border: 1px solid #444;
+    }
+
+    /* /ABOUT PAGE */
+    .glue-header .glue-header__bar {
+      background: ${mainBg} !important;
+    }
+    .glue-header__cta {
+      background-color: ${mainBg};
+    }
+    .glue-headline {
+      color: rgb(190, 190, 190);
+    }
+    .progressive-tab-content-wrapper.active-tab .progressive-tab-content {
+      color: rgb(210, 210, 210);
+    }
+    .glue-tab[aria-selected=true] {
+      color: rgb(210, 210, 210);
+    }
+    .glue-footer {
+      background: ${mainBg};
+    }
+    .glue-footer__link {
+      color: rgb(190, 190, 190);
+      background: ${mainBg};
+    }
+    .glue-footer__lang-dropdown, .glue-footer__lang-dropdown > option {
+      color: rgb(190, 190, 190);
+      background: ${mainBg};
+    }
+    .glue-footer__lang-dropdown:active, .glue-footer__lang-dropdown:focus {
+      rgb(190, 190, 190);
+      background: #444;
+    }
+    .glue-cookie-notification-bar {
+      background: ${mainBg};
     }
   `;
   document.head.appendChild(additionalStyles);
