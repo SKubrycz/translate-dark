@@ -1,13 +1,9 @@
 function setDarkMode() {
+  const mainColor = `rgb(190, 190, 190)`;
   const mainBg = "#222";
 
   document.body.style.backgroundColor = mainBg;
-  document.body.style.color = `rgb(190, 190, 190)`;
-  const allButtons = document.getElementsByTagName("button");
-  // const gradients = document.getElementsByClassName("U0xwnf");
-  // const translatingWindows = document.getElementsByClassName("ccvoYb");
-  const translatingWindowsRenderer = document.getElementsByClassName("QsA0jb");
-  const languageTabs = document.getElementsByClassName("VfPpkd-YVzG2b");
+  document.body.style.color = mainColor;
 
   if (!document.URL.includes("/about")) {
     const headerBanner = document.getElementById("gb");
@@ -16,6 +12,10 @@ function setDarkMode() {
 
   const additionalStyles = document.createElement("style");
   additionalStyles.innerHTML = `
+    html {
+      scrollbar-color: #444 #222;
+    }
+
     /* navbar */
     header[role=banner] {
       background: ${mainBg};
@@ -23,18 +23,18 @@ function setDarkMode() {
 
     /* settings */
     .pWIpbc, .Jp7KKb, .XOPM0 {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     /* drawer */
     div[role=navigation] {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
       background: ${mainBg};
     }
 
     /* upper buttons */
     .Rj2Mlf:not(:disabled) {
-      border-color: var(--gm-hairlinebutton-outline-color,#444);
+      border-color: var(--gm-hairlinebutton-outline-color, #444);
     }
 
     /* gradient colors */
@@ -56,7 +56,7 @@ function setDarkMode() {
       background: ${mainBg};
     }
     .qSb8Pe {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .qSb8Pe:hover {
       background: #444;
@@ -74,7 +74,7 @@ function setDarkMode() {
 
     /* translation input section */
     .er8xn {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .KjuTac {
       background: ${mainBg};
@@ -83,7 +83,7 @@ function setDarkMode() {
       background-color: #444;
     }
     .uNr6ee {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .xUPQqb {
       color: rgb(150, 150, 150);
@@ -95,11 +95,11 @@ function setDarkMode() {
       background-color: #444 !important;
     }
     .vk-btn {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
       background-image: linear-gradient(to bottom, #333, #444) !important;
     }
     /*.vk-sf-h {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
       background-image: linear-gradient(to bottom, #555, #666);
     }*/
     .ita-kd-dropdown-menu {
@@ -107,7 +107,7 @@ function setDarkMode() {
       border: 1px solid rgb(170, 170, 170) !important;
     }
     .ita-kd-menuitem {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .ita-kd-menuitem:hover {
       background: #777 !important;
@@ -123,7 +123,7 @@ function setDarkMode() {
       background-color: #444;
     }
     .FqSPb, .xsPT1b, .lRu31 {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     .jCAhz:hover {
@@ -150,7 +150,7 @@ function setDarkMode() {
       background-color: #666;
     }
     .lrSgmd {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .W5CUef {
       color: rgb(170, 170, 170);
@@ -165,15 +165,15 @@ function setDarkMode() {
     }
 
     .ydsGXd {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .b08HRd:not(:disabled), .jqUpHc:not(:disabled) {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     /* word chips */
     .U8K5nb {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
       background-color: ${mainBg};
     }
 
@@ -190,7 +190,7 @@ function setDarkMode() {
       background-color: #444;
     }
     .TcXXXb {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     /* background color after dictionary load */
@@ -206,7 +206,7 @@ function setDarkMode() {
       filter: invert(90%) hue-rotate(190deg);
     }
     .pwKYW {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     /* dictionary */
@@ -214,28 +214,28 @@ function setDarkMode() {
       background-color: ${mainBg};
     }
     .SMqeCb {
-      background-color: ${mainBg};
+      background-color: ${mainBg} !important;
     }
     .kmXzdf, .eSogib {
-      box-shadow: -1px 0 rgb(170, 170, 170);
+      box-shadow: -1px 0 #444;
     }
     .a2Icud {
       1px solid rgb(170, 170, 170);
     }
     .aia4Ud {
-      color: rgb(190, 190, 190);
+      color: ${mainColor} !important;
     }
     .S6GkK {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .JAk00 {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .AZPoqf {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .kgnlhe {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
 
     /* history */
@@ -243,13 +243,13 @@ function setDarkMode() {
       background: ${mainBg} !important;
     }
     .XMNbjd {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .v2OCrb {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .EYBmYc {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .uqiNJb {
       color: rgb(170, 170, 170);
@@ -258,7 +258,7 @@ function setDarkMode() {
       background: ${mainBg} !important;
     }
     .vvNkBd {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .NBY4Kb {
       background: ${mainBg} !important;
@@ -269,16 +269,16 @@ function setDarkMode() {
       background: ${mainBg} !important;
     }
     .AP34ab {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .kgJkHd {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
     .VfPpkd-xl07Ob-XxIAqe {
       background-color: ${mainBg} !important;
     }
     .VfPpkd-StrnGf-rymPhb-b9t22c {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
 
     /* while no saved translations */
@@ -286,7 +286,7 @@ function setDarkMode() {
       filter: invert(90%);
     }
     .HswdMd {
-      color: rgb(190, 190, 190) !important;
+      color: ${mainColor} !important;
     }
 
     /* history & saved buttons */
@@ -303,7 +303,7 @@ function setDarkMode() {
       background-color: ${mainBg};
     }
     .glue-headline {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
     }
     .progressive-tab-content-wrapper.active-tab .progressive-tab-content {
       color: rgb(210, 210, 210);
@@ -315,11 +315,11 @@ function setDarkMode() {
       background: ${mainBg};
     }
     .glue-footer__link {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
       background: ${mainBg};
     }
     .glue-footer__lang-dropdown, .glue-footer__lang-dropdown > option {
-      color: rgb(190, 190, 190);
+      color: ${mainColor};
       background: ${mainBg};
     }
     .glue-footer__lang-dropdown:active, .glue-footer__lang-dropdown:focus {
