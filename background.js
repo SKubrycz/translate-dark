@@ -1,6 +1,8 @@
 function setDarkMode() {
   const mainColor = `rgb(190, 190, 190)`;
   const mainBg = "#222";
+  const thinBorder = `1px solid rgb(170, 170, 170)`;
+  const thickBorder= `2px solid rgb(170, 170, 170)`;
 
   document.body.style.backgroundColor = mainBg;
   document.body.style.color = mainColor;
@@ -104,7 +106,7 @@ function setDarkMode() {
     }*/
     .ita-kd-dropdown-menu {
       background: #444 !important;
-      border: 1px solid rgb(170, 170, 170) !important;
+      border: ${thinBorder} !important;
     }
     .ita-kd-menuitem {
       color: ${mainColor} !important;
@@ -144,7 +146,7 @@ function setDarkMode() {
       background-color: #666;
     }
     .WtlSJf {
-      border-bottom: 1px solid rgb(170, 170, 170);
+      border-bottom: ${thinBorder};
     }
     .WtlSJf:hover {
       background-color: #666;
@@ -156,11 +158,11 @@ function setDarkMode() {
       color: rgb(170, 170, 170);
     }
     .qt6jm {
-      border-top: 2px solid rgb(170, 170, 170);
+      border-top: ${thickBorder};
     }
 
     .hX7wnb {
-      border-top: 2px solid rgb(170, 170, 170);
+      border-top: ${thickBorder};
       background-color: #444;
     }
 
@@ -182,7 +184,7 @@ function setDarkMode() {
     }
 
     .Bljmlb {
-      border-top: 2px solid rgb(170, 170, 170);
+      border-top: ${thickBorder};
     }
 
     /* footer icon buttons */
@@ -220,7 +222,7 @@ function setDarkMode() {
       box-shadow: -1px 0 #444;
     }
     .a2Icud {
-      1px solid rgb(170, 170, 170);
+      border-top: ${thinBorder};
     }
     .aia4Ud {
       color: ${mainColor} !important;
