@@ -101,6 +101,19 @@ div[role="navigation"] {
   background: #444 !important;
   border: var(--thinBorder) !important;
 }
+.ita-hwt-grip {
+  background-position: -650px -110px !important;
+  background-color: transparent !important;
+  transform: rotate(90deg) !important;
+}
+.ita-hwt-grip-hover {
+  background-position: -650px -110px !important;
+  background-color: transparent !important;
+  transform: rotate(90deg) !important;
+}
+.ita-hwt-close {
+  background-color: transparent !important;
+}
 .ita-kd-menuitem {
   color: var(--mainColor) !important;
 }
