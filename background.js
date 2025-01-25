@@ -287,6 +287,9 @@ canvas.ita-hwt-canvas {
 .kgnlhe {
   color: var(--mainColor);
 }
+.ECE1Qb {
+  filter: invert(90%) hue-rotate(190deg) !important;
+}
 
 /* history */
 .AzKM4 {
