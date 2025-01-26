@@ -273,7 +273,7 @@ canvas.ita-hwt-canvas {
   color: var(--mainColor);
 }
 .ECE1Qb {
-  filter: invert(90%) hue-rotate(190deg);
+  filter: invert(90%) hue-rotate(190deg) !important;
 }
 
 /* history */

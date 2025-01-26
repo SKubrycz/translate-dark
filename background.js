@@ -391,6 +391,36 @@ canvas.ita-hwt-canvas {
   styles.textContent = css;
   document.head.appendChild(styles);
 
+  const languageButtons = document.querySelectorAll(
+    "button.VfPpkd-AznF2e-OWXEXe-jJNx8e-QBLLGd"
+  );
+  for (let i = 0; i < languageButtons.length; i++) {
+    languageButtons[i].addEventListener("mouseenter", (e) => {
+      const hoverColor = `rgb(230, 230, 230)`;
+      if (languageButtons[i] === e.target) {
+        const children = languageButtons[i].children;
+        languageButtons[i].style.setProperty("color", hoverColor, "important");
+        const childChildren = children[0].children;
+        childChildren[0].style.setProperty("color", hoverColor, "important");
+        for (let j = 0; j < children.length; j++) {
+          children[j].style.setProperty("color", hoverColor, "important");
+        }
+      }
+    });
+
+    languageButtons[i].addEventListener("mouseleave", (e) => {
+      if (languageButtons[i] === e.target) {
+        const children = languageButtons[i].children;
+        languageButtons[i].style.setProperty("color", mainColor, "important");
+        const childChildren = children[0].children;
+        childChildren[0].style.setProperty("color", mainColor, "important");
+        for (let j = 0; j < children.length; j++) {
+          children[j].style.setProperty("color", mainColor, "important");
+        }
+      }
+    });
+  }
+
   console.log("dark mode has been set");
 }
 
