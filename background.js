@@ -404,6 +404,8 @@ canvas.ita-hwt-canvas {
         childChildren[0].style.setProperty("color", hoverColor, "important");
         for (let j = 0; j < children.length; j++) {
           children[j].style.setProperty("color", hoverColor, "important");
+          if (children[j].classList.contains(`VfPpkd-AznF2e-OWXEXe-auswjd`))
+            console.log(children[j].classList);
         }
       }
     });
@@ -413,9 +415,46 @@ canvas.ita-hwt-canvas {
         const children = languageButtons[i].children;
         languageButtons[i].style.setProperty("color", mainColor, "important");
         const childChildren = children[0].children;
+
         childChildren[0].style.setProperty("color", mainColor, "important");
-        for (let j = 0; j < children.length; j++) {
-          children[j].style.setProperty("color", mainColor, "important");
+
+        if (
+          children[1].children[0].classList.value ===
+          `VfPpkd-AznF2e-wEcVzc VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb`
+        ) {
+          const computed = window.getComputedStyle(children[1].children[0]);
+          if (computed.opacity === "1") {
+            childChildren[0].style.setProperty(
+              "color",
+              "rgb(26, 115, 232)",
+              "important"
+            );
+          }
+        }
+      }
+    });
+
+    languageButtons[i].addEventListener("click", (e) => {
+      if (languageButtons[i] === e.target) {
+        for (let k = 0; k < languageButtons.length; k++) {
+          const children = languageButtons[k].children;
+          const childChildren = children[0].children;
+
+          childChildren[0].style.setProperty("color", mainColor, "important");
+
+          if (
+            children[1].children[0].classList.value ===
+            `VfPpkd-AznF2e-wEcVzc VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb`
+          ) {
+            const computed = window.getComputedStyle(children[1].children[0]);
+            if (computed.opacity === "1") {
+              childChildren[0].style.setProperty(
+                "color",
+                "rgb(26, 115, 232)",
+                "important"
+              );
+            }
+          }
         }
       }
     });
