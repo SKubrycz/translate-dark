@@ -399,21 +399,14 @@ canvas.ita-hwt-canvas {
       const hoverColor = `rgb(230, 230, 230)`;
       if (languageButtons[i] === e.target) {
         const children = languageButtons[i].children;
-        languageButtons[i].style.setProperty("color", hoverColor, "important");
         const childChildren = children[0].children;
         childChildren[0].style.setProperty("color", hoverColor, "important");
-        for (let j = 0; j < children.length; j++) {
-          children[j].style.setProperty("color", hoverColor, "important");
-          if (children[j].classList.contains(`VfPpkd-AznF2e-OWXEXe-auswjd`))
-            console.log(children[j].classList);
-        }
       }
     });
 
     languageButtons[i].addEventListener("mouseleave", (e) => {
       if (languageButtons[i] === e.target) {
         const children = languageButtons[i].children;
-        languageButtons[i].style.setProperty("color", mainColor, "important");
         const childChildren = children[0].children;
 
         childChildren[0].style.setProperty("color", mainColor, "important");
@@ -435,32 +428,38 @@ canvas.ita-hwt-canvas {
     });
 
     languageButtons[i].addEventListener("click", (e) => {
-      if (languageButtons[i] === e.target) {
+      if (languageButtons[i] === e.target.parentNode) {
         for (let k = 0; k < languageButtons.length; k++) {
           const children = languageButtons[k].children;
           const childChildren = children[0].children;
-
-          childChildren[0].style.setProperty("color", mainColor, "important");
 
           if (
             children[1].children[0].classList.value ===
             `VfPpkd-AznF2e-wEcVzc VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb`
           ) {
             const computed = window.getComputedStyle(children[1].children[0]);
-            if (computed.opacity === "1") {
-              childChildren[0].style.setProperty(
-                "color",
-                "rgb(26, 115, 232)",
-                "important"
-              );
-            }
+            const timeout = setTimeout(() => {
+              if (computed.opacity === "1") {
+                childChildren[0].style.setProperty(
+                  "color",
+                  "rgb(26, 115, 232)",
+                  "important"
+                );
+              } else {
+                childChildren[0].style.setProperty(
+                  "color",
+                  mainColor,
+                  "important"
+                );
+              }
+            }, 25);
           }
         }
       }
     });
   }
 
-  console.log("dark mode has been set");
+  // console.log("dark mode has been set");
 }
 
 chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
@@ -481,7 +480,6 @@ chrome.tabs.onUpdated.addListener(async function (tabId, changeInfo, tab) {
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
       func: setDarkMode,
-      //   args: [tab.url],
     });
   }
 });
