@@ -394,21 +394,42 @@ canvas.ita-hwt-canvas {
   const languageButtons = document.querySelectorAll(
     "button.VfPpkd-AznF2e-OWXEXe-jJNx8e-QBLLGd"
   );
+
+  function mutationCallback(mutationList, observer, child) {
+    for (const mutation of mutationList) {
+      if (mutation.type === "attributes") {
+        const computed = window.getComputedStyle(mutation.target);
+        if (computed.opacity === "0") {
+          mutation.target.style.setProperty("color", mainColor, "important");
+        }
+
+        if (mutation.target.tabIndex == "0") {
+          child.style.setProperty("color", "rgb(26, 115, 232)", "important");
+        } else {
+          child.style.setProperty("color", mainColor, "important");
+        }
+      }
+    }
+  }
+
   for (let i = 0; i < languageButtons.length; i++) {
+    const children = languageButtons[i].children;
+    const childChildren = children[0].children;
+
+    const observer = new MutationObserver((mutationList, observer) =>
+      mutationCallback(mutationList, observer, childChildren[0])
+    );
+    observer.observe(languageButtons[i], { attributes: true });
+
     languageButtons[i].addEventListener("mouseenter", (e) => {
       const hoverColor = `rgb(230, 230, 230)`;
       if (languageButtons[i] === e.target) {
-        const children = languageButtons[i].children;
-        const childChildren = children[0].children;
         childChildren[0].style.setProperty("color", hoverColor, "important");
       }
     });
 
     languageButtons[i].addEventListener("mouseleave", (e) => {
       if (languageButtons[i] === e.target) {
-        const children = languageButtons[i].children;
-        const childChildren = children[0].children;
-
         childChildren[0].style.setProperty("color", mainColor, "important");
 
         if (
@@ -416,44 +437,21 @@ canvas.ita-hwt-canvas {
           `VfPpkd-AznF2e-wEcVzc VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb`
         ) {
           const computed = window.getComputedStyle(children[1].children[0]);
-          if (computed.opacity === "1") {
-            childChildren[0].style.setProperty(
-              "color",
-              "rgb(26, 115, 232)",
-              "important"
-            );
-          }
-        }
-      }
-    });
-
-    languageButtons[i].addEventListener("click", (e) => {
-      if (languageButtons[i] === e.target.parentNode) {
-        for (let k = 0; k < languageButtons.length; k++) {
-          const children = languageButtons[k].children;
-          const childChildren = children[0].children;
-
-          if (
-            children[1].children[0].classList.value ===
-            `VfPpkd-AznF2e-wEcVzc VfPpkd-AznF2e-wEcVzc-OWXEXe-NowJzb`
-          ) {
-            const computed = window.getComputedStyle(children[1].children[0]);
-            const timeout = setTimeout(() => {
-              if (computed.opacity === "1") {
-                childChildren[0].style.setProperty(
-                  "color",
-                  "rgb(26, 115, 232)",
-                  "important"
-                );
-              } else {
-                childChildren[0].style.setProperty(
-                  "color",
-                  mainColor,
-                  "important"
-                );
-              }
-            }, 25);
-          }
+          const timeout = setTimeout(() => {
+            if (computed.opacity === "1") {
+              childChildren[0].style.setProperty(
+                "color",
+                "rgb(26, 115, 232)",
+                "important"
+              );
+            } else {
+              childChildren[0].style.setProperty(
+                "color",
+                mainColor,
+                "important"
+              );
+            }
+          }, 25);
         }
       }
     });
