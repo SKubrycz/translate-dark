@@ -182,6 +182,9 @@ canvas.ita-hwt-canvas {
 .Xcmxjb.FwR7Pc {
   background-color: #777;
 }
+.y3G1Jb {
+  color: var(--mainColor);
+}
 
 /* synonyms popover */
 .NWlwsb {
@@ -384,6 +387,7 @@ canvas.ita-hwt-canvas {
 .glue-cookie-notification-bar {
   background: var(--mainBg);
 }
+
 
 `;
 
