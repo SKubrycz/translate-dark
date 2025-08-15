@@ -268,6 +268,12 @@ canvas.ita-hwt-canvas {
 .SMqeCb {
   background-color: var(--mainBg) !important;
 }
+.bhvHjb {
+  background: var(--mainBg) !important;
+}
+.m2ySsc > span {
+  color: var(--mainColor) !important;
+}
 .kmXzdf,
 .eSogib {
   box-shadow: -1px 0 #444;
@@ -387,6 +393,7 @@ canvas.ita-hwt-canvas {
 .glue-cookie-notification-bar {
   background: var(--mainBg);
 }
+
 
 
 `;
