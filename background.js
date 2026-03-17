@@ -24,6 +24,15 @@ html {
   scrollbar-color: #444 #222;
 }
 
+/* general icon styles */
+.NMm5M {
+  fill: var(--mainColor);
+}
+
+.ZihNHd:not(:disabled) {
+  color: var(--mainColor);
+}
+
 /* navbar */
 header[role="banner"] {
   background: var(--mainBg);
@@ -45,6 +54,16 @@ div[role="navigation"] {
 /* upper buttons */
 .Rj2Mlf:not(:disabled) {
   border-color: var(--gm-hairlinebutton-outline-color, #444);
+}
+.MOkH4e.GeWPTc.MFKVse 
+.X2ZoU:not(:disabled), 
+.MOkH4e.GeWPTc.Vkm6Re 
+.MxWhHf:not(:disabled), 
+.MOkH4e.GeWPTc.iYelWb 
+.GyPTPe:not(:disabled), 
+.MOkH4e.GeWPTc.H4CMrb 
+.Ft4sJe:not(:disabled) {
+  background-color: var(--mainBg);
 }
 
 /* gradient colors */
@@ -162,9 +181,15 @@ canvas.ita-hwt-canvas {
 .ita-hwt-jfk-hover {
   background-color: #777 !important;
 }
+.rm1UF {
+  border: var(--thinBorder);
+}
 
 /* translation output section */
 .QcsUad {
+  background-color: #444;
+}
+.QcsUad.GeWPTc {
   background-color: #444;
 }
 .FqSPb,
@@ -222,6 +247,10 @@ canvas.ita-hwt-canvas {
   color: var(--mainColor);
 }
 
+.kXN2zb.GeWPTc:not(body>c-wiz) {
+  border: var(--thinBorder);
+}
+
 /* word chips */
 .U8K5nb {
   color: var(--mainColor);
@@ -239,6 +268,7 @@ canvas.ita-hwt-canvas {
 /* footer icon buttons */
 .ySES5 {
   background-color: #444;
+  border: var(--thinBorder)
 }
 .TcXXXb {
   color: var(--mainColor);
@@ -393,8 +423,6 @@ canvas.ita-hwt-canvas {
 .glue-cookie-notification-bar {
   background: var(--mainBg);
 }
-
-
 
 `;
 
